@@ -14,9 +14,19 @@ function buscarFuncionario($funcionarios, $nome)
 
     $funcionariosFiltro = [];
     foreach ($funcionarios as $funcionario) {
-        if ($funcionario->first_name == $nome) {
+        if (strpos($funcionario->first_name, $nome) !== false) {
             $funcionariosFiltro[] = $funcionario;
         }
     }
     return $funcionariosFiltro;
+}
+
+function adicionarFuncionario(array $funcionario)
+{
+    $funcionarios = lerArquivo('empresaX.json');
+    $id = count($funcionarios) + 1;
+    $funcionario['id'] = $id;
+    $funcionarios[] = $funcionario;
+    $json = json_encode($funcionarios);
+    file_put_contents('empresaX.json', $json);
 }
