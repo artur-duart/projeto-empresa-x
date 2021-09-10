@@ -25,12 +25,12 @@ function buscarFuncionario($funcionarios, $nome)
     return $funcionariosFiltro;
 }
 
-function adicionarFuncionario($nomeArquivo, $novoFuncionario)
+function adicionarFuncionario(array $funcionario)
 {
-    $funcionarios = lerArquivo($nomeArquivo);
-    $funcionarios[] = $novoFuncionario;
+    $funcionarios = lerArquivo('empresaX.json');
     $id = count($funcionarios) + 1;
-    $novoFuncionario["id"] = $id;
+    $funcionario['id'] = $id;
+    $funcionarios[] = $funcionario;
     $json = json_encode($funcionarios);
-    file_put_contents("empresaX.json", $json);
+    file_put_contents('empresaX.json', $json);
 }
