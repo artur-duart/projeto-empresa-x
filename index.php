@@ -48,8 +48,8 @@ if (
     <p id="subtitle">A empresa conta com <?= $count ?> funcionários</p>
     <section>
         <form>
-            <input type="text" placeholder="Buscar funcionário..." name="buscarFuncionario" id="buscarFuncionario" value='<?= isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>' />
-            <button>Buscar</button>
+            <input type="text" required placeholder="Buscar funcionário..." name="buscarFuncionario" id="buscarFuncionario" value='<?= isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>' />
+            <button id="buscar">Buscar</button>
         </form>
         <table border="1">
             <tr>
@@ -61,6 +61,7 @@ if (
                 <th>Endereço IP</th>
                 <th>País</th>
                 <th>Departamento</th>
+                <th>Ação</th>
             </tr>
             <?php foreach ($funcionarios as $funcionario) : ?>
                 <tr>
@@ -72,6 +73,10 @@ if (
                     <td><?= $funcionario->ip_address ?></td>
                     <td><?= $funcionario->country ?></td>
                     <td><?= $funcionario->department ?></td>
+                    <td>
+                        <button id="edit">Editar</button>
+                        <button id="delete" onclick="openDeleteModal()">Deletar</button>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -80,8 +85,9 @@ if (
     <div id="add_new">
         <p>+</p>
     </div>
-    <div id="container_modal">
-        <div id="bg"></div>
+
+    <div id="add_container_modal">
+        <div id="add_bg"></div>
         <div class="modal">
             <h2>Adicione um novo funcionário</h2>
             <form>
@@ -99,6 +105,19 @@ if (
                 <div class="buttons">
                     <button id="cancel" type="button">Cancelar</button>
                     <button id="send">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="delete_container_modal">
+        <div id="delete_bg"></div>
+        <div class="modal">
+            <h2>Você deseja mesmo fazer isso?</h2>
+            <form>
+                <div class="buttons">
+                    <button id="cancelDelete" type="button">Cancelar</button>
+                    <button id="confirmDelete">Deletar</button>
                 </div>
             </form>
         </div>

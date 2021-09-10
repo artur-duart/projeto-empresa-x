@@ -14,7 +14,6 @@ body {
     justify-content: center;
 }
 
-
 h1 {
     text-align: center;
     margin-bottom: 10px;
@@ -71,15 +70,24 @@ input {
     border: none;
 }
 
-button {
+#buscar {
     width: 9.6%;
+    margin-bottom: 20px;
+    background-color: #800000;
+}
+
+#buscar:hover {
+    background-color: #600000;
+}
+
+button {
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
     outline: none;
     border: none;
-    background-color: #800000;
+    background-color: #600000;
     color: white;
     font-weight: bold;
     transition: all ease 0.3s;
@@ -87,7 +95,7 @@ button {
 }
 
 button:hover {
-    background-color: #600000;
+    background-color: #400000;
 }
 
 #add_new {
@@ -116,7 +124,8 @@ button:hover {
     color: white;
 }
 
-#container_modal {
+#add_container_modal,
+#delete_container_modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -127,14 +136,16 @@ button:hover {
     justify-content: center;
 }
 
-#container_modal #bg {
+#add_container_modal #add_bg,
+#delete_container_modal #delete_bg {
     position: relative;
     width: 100%;
     height: 100%;
     background-color: #12121233;
 }
 
-#container_modal .modal {
+#add_container_modal .modal,
+#delete_container_modal .modal {
     background-color: white;
     width: 600px;
     position: absolute;
@@ -148,15 +159,16 @@ button:hover {
     gap: 24px;
 }
 
-#container_modal .modal form {
+#add_container_modal .modal form,
+#delete_container_modal .modal form {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-#container_modal .modal form input,
-#container_modal .modal form select {
+#add_container_modal .modal form input,
+#add_container_modal .modal form select {
     height: 50px;
     border: none;
     border-radius: 8px;
@@ -166,24 +178,26 @@ button:hover {
     width: 100%;
 }
 
-#container_modal .modal form select {
+#add_container_modal .modal form select {
     color: #868686;
 }
 
-#container_modal .modal form input:focus,
-#container_modal .modal form select:focus {
+#add_container_modal .modal form input:focus,
+#add_container_modal .modal form select:focus {
     border: 2px solid #2b2b2b;
     border-radius: 8px;
     padding: 0 11px;
 }
 
-#container_modal .modal form .buttons {
+#add_container_modal .modal form .buttons,
+#delete_container_modal .modal form .buttons {
     display: flex;
     width: 100%;
     gap: 12px;
 }
 
-#container_modal .modal form button {
+#add_container_modal .modal form button,
+#delete_container_modal .modal form button {
     height: 50px;
     flex: 1;
     border: none;
@@ -193,10 +207,12 @@ button:hover {
     cursor: pointer;
 }
 
-#cancel {
+#cancel,
+#cancelDelete {
     background-color: #141414;
 }
 
-#send {
+#send,
+#confirmDelete {
     background-color: #800000
 }
