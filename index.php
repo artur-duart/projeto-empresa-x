@@ -38,6 +38,7 @@ if (
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
     <title>Situação Aprendizagem</title>
@@ -75,7 +76,8 @@ if (
                     <td><?= $funcionario->department ?></td>
                     <td>
                         <button id="edit">Editar</button>
-                        <button id="delete" onclick="openDeleteModal()">Deletar</button>
+                        <button id="delete" onclick="deletar(<?= $funcionario->id ?>)">Deletar</button>
+                        <!-- <button id="delete" onclick="openDeleteModal()">Deletar</button> -->
                     </td>
                 </tr>
             <?php endforeach; ?>
