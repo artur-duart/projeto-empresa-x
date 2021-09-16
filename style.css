@@ -241,11 +241,10 @@ button:hover {
     width: 20vw;
 }
 
-.container-form h1{
+.container-form h1 {
     width: 20vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-
