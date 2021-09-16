@@ -75,7 +75,7 @@ if (
                     <td><?= $funcionario->country ?></td>
                     <td><?= $funcionario->department ?></td>
                     <td>
-                        <button id="edit"><i class="fas fa-edit"></i></button>
+                        <button id="edit" onclick="editar(<?= $funcionario->id ?>)"><i class="fas fa-edit"></i></button>
                         <button id="delete" onclick="deletar(<?= $funcionario->id ?>)"><i class="fas fa-trash-alt"></i></button>
                         <!-- <button id="delete" onclick="openDeleteModal()">Deletar</button> -->
                     </td>

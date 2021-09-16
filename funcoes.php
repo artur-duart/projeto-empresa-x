@@ -28,7 +28,7 @@ function buscarFuncionario($funcionarios, $nome)
 function adicionarFuncionario(array $funcionario)
 {
     $funcionarios = lerArquivo('empresaX.json');
-    $id = count($funcionarios) + 1;
+    $id = end($funcionarios)->id + 1;
     $funcionario['id'] = $id;
     $funcionarios[] = $funcionario;
     $json = json_encode($funcionarios);
@@ -49,4 +49,18 @@ function deletarFuncionario($nomeArquivo, $idFuncionario)
     $jsonArray = json_encode(array_values($funcionarios));
 
     file_put_contents($nomeArquivo, $jsonArray);
+}
+
+function buscarFuncionarioPorId($nomeArquivo, $idFuncionario)
+{
+
+    $funcionarios = lerArquivo($nomeArquivo);
+
+    foreach ($funcionarios as $funcionario) {
+        if ($funcionario->id = $idFuncionario) {
+            return $funcionario;
+        }
+    }
+
+    return false;
 }

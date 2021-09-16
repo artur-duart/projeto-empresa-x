@@ -216,3 +216,36 @@ button:hover {
 #confirmDelete {
     background-color: #800000
 }
+
+.container-form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.editarFuncionario {
+    display: flex;
+    flex-direction: column;
+}
+
+#salvarEdicao {
+    width: 20vw;
+    margin-top: 15px;
+}
+
+.container-form input {
+    margin-top: 5px;
+    width: 20vw;
+}
+
+.container-form h1{
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
