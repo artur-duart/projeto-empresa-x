@@ -38,7 +38,7 @@ if (
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a757f2d5f7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
     <title>Situação Aprendizagem</title>
@@ -75,8 +75,8 @@ if (
                     <td><?= $funcionario->country ?></td>
                     <td><?= $funcionario->department ?></td>
                     <td>
-                        <button id="edit">Editar</button>
-                        <button id="delete" onclick="deletar(<?= $funcionario->id ?>)">Deletar</button>
+                        <button id="edit"><i class="fas fa-edit"></i></button>
+                        <button id="delete" onclick="deletar(<?= $funcionario->id ?>)"><i class="fas fa-trash-alt"></i></button>
                         <!-- <button id="delete" onclick="openDeleteModal()">Deletar</button> -->
                     </td>
                 </tr>
