@@ -53,14 +53,29 @@ function deletarFuncionario($nomeArquivo, $idFuncionario)
 
 function buscarFuncionarioPorId($nomeArquivo, $idFuncionario)
 {
-
     $funcionarios = lerArquivo($nomeArquivo);
 
     foreach ($funcionarios as $funcionario) {
-        if ($funcionario->id = $idFuncionario) {
+        if ($funcionario->id == $idFuncionario) {
             return $funcionario;
         }
     }
 
     return false;
+}
+
+function editarFuncionario($nomeArquivo, $funcionarioEditado)
+{
+
+    $funcionarios = lerArquivo($nomeArquivo);
+
+    foreach ($funcionarios as $chave => $funcionario) {
+        if ($funcionario->id == $funcionarioEditado["id"]) {
+            $funcionarios[$chave] = $funcionarioEditado;
+        }
+    }
+
+    $jsonArray = json_encode(array_values($funcionarios));
+
+    file_put_contents($nomeArquivo, $jsonArray);
 }

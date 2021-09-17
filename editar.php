@@ -4,6 +4,7 @@ require("./funcoes.php");
 $funcionarioId = $_GET["id"];
 
 $funcionario = buscarFuncionarioPorId("./empresaX.json", $funcionarioId);
+
 ?>
 
 <!DOCTYPE html>
