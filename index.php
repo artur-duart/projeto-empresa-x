@@ -1,6 +1,9 @@
 <?php
 
+session_start();
 require("./funcoes.php");
+
+verificarLogin();
 
 $funcionarios = lerArquivo("./empresaX.json");
 
@@ -45,13 +48,18 @@ if (
 </head>
 
 <body>
+
     <h1>Funcionários da empresa X</h1>
     <p id="subtitle">A empresa conta com <?= $count ?> funcionários</p>
     <section>
         <form>
             <input type="text" required placeholder="Buscar funcionário..." name="buscarFuncionario" id="buscarFuncionario" value='<?= isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>' />
             <button id="buscar">Buscar</button>
+            <a href="processa_login.php?logout=true">Sair</a>
         </form>
+
+        <div class="sair"><?php echo 'Olá ' . strtoupper($_SESSION['usuario']) . ' - Login efetutado em: ' . $_SESSION['data_hora']; ?></div>
+
         <table border="1">
             <tr>
                 <th>ID</th>
@@ -77,7 +85,6 @@ if (
                     <td>
                         <button id="edit" onclick="editar(<?= $funcionario->id ?>)"><i class="fas fa-edit"></i></button>
                         <button id="delete" onclick="deletar(<?= $funcionario->id ?>)"><i class="fas fa-trash-alt"></i></button>
-                        <!-- <button id="delete" onclick="openDeleteModal()">Deletar</button> -->
                     </td>
                 </tr>
             <?php endforeach; ?>

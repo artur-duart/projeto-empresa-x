@@ -14,6 +14,13 @@ body {
     justify-content: center;
 }
 
+.sair {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 10px;
@@ -96,6 +103,26 @@ button {
 
 button:hover {
     background-color: #400000;
+}
+
+a {
+    width: 9.6%;
+    height: 35px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: #800000;
+    color: white;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #600000;
 }
 
 #add_new {
@@ -250,3 +277,4 @@ button:hover {
     justify-content: center;
     flex-direction: column;
 }
+
